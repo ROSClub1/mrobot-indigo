@@ -1,0 +1,31 @@
+digraph G {
+"base_link" -> "imu_link"[label="Broadcaster: /imu_to_base\nAverage rate: 165.983 Hz\nMost recent transform: 1477994498.788 ( -0.916 sec old)\nBuffer length: 4.741 sec\n"];
+"base_footprint" -> "base_link"[label="Broadcaster: /state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1477994499.173 ( -1.301 sec old)\nBuffer length: 4.600 sec\n"];
+"map" -> "odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 20.213 Hz\nMost recent transform: 1477994498.814 ( -0.943 sec old)\nBuffer length: 4.700 sec\n"];
+"odom" -> "base_footprint"[label="Broadcaster: /robot_pose_ekf\nAverage rate: 23.617 Hz\nMost recent transform: 1477994498.733 ( -0.861 sec old)\nBuffer length: 4.700 sec\n"];
+"camera_rgb_frame" -> "camera_depth_frame"[label="Broadcaster: /state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1477994499.173 ( -1.301 sec old)\nBuffer length: 4.600 sec\n"];
+"base_link" -> "camera_rgb_frame"[label="Broadcaster: /state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1477994499.173 ( -1.301 sec old)\nBuffer length: 4.600 sec\n"];
+"camera_depth_frame" -> "camera_depth_optical_frame"[label="Broadcaster: /state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1477994499.173 ( -1.301 sec old)\nBuffer length: 4.600 sec\n"];
+"camera_rgb_frame" -> "camera_link"[label="Broadcaster: /state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1477994499.173 ( -1.301 sec old)\nBuffer length: 4.600 sec\n"];
+"camera_rgb_frame" -> "camera_rgb_optical_frame"[label="Broadcaster: /state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1477994499.173 ( -1.301 sec old)\nBuffer length: 4.600 sec\n"];
+"base_link" -> "mount_asus_xtion_pro_link"[label="Broadcaster: /state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1477994499.173 ( -1.301 sec old)\nBuffer length: 4.600 sec\n"];
+"base_link" -> "Caster_BL"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"base_link" -> "Caster_BR"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"base_link" -> "Caster_FL"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"base_link" -> "Caster_FR"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"base_link" -> "Left_wheel"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"base_link" -> "Right_wheel"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"base_link" -> "Xtion_Pro"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"Caster_BL" -> "wheel_BL"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"Caster_BR" -> "wheel_BR"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"Caster_FL" -> "wheel_FL"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+"Caster_FR" -> "wheel_FR"[label="Broadcaster: /state_publisher\nAverage rate: 4.000 Hz\nMost recent transform: 1477994498.681 ( -0.809 sec old)\nBuffer length: 4.500 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1477994497.872"[ shape=plaintext ] ;
+ }->"map";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1477994497.872"[ shape=plaintext ] ;
+ }->"imu_base";
+}

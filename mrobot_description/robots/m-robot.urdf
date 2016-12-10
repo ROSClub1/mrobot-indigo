@@ -1,0 +1,414 @@
+<robot
+  name="m-robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000165827401089777 1.32092585759993E-06 0.0449588297558776"
+        rpy="0 0 0" />
+      <mass
+        value="1.16110991709555" />
+      <inertia
+        ixx="0.0141882051609444"
+        ixy="3.62233523910168E-07"
+        ixz="-4.17201487692999E-05"
+        iyy="0.0134385266460898"
+        iyz="-7.5899226874292E-06"
+        izz="0.00936941533097651" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="XtionPro_Link">
+    <inertial>
+      <origin
+        xyz="0.0173089750578809 -7.50819682677935E-05 -0.00364675219943161"
+        rpy="0 0 0" />
+      <mass
+        value="0.162407893054236" />
+      <inertia
+        ixx="0.000403778164533069"
+        ixy="-1.96732545215064E-07"
+        ixz="5.35884853146575E-06"
+        iyy="5.69834291540739E-05"
+        iyz="-1.61775151558225E-08"
+        izz="0.000382310464062082" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/XtionPro_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/XtionPro_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="XtionPro_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.0787933761151307 5.00000000054237E-05 0.3042"
+      rpy="1.03941160890147E-16 -2.22044604925031E-16 -2.7254780997982E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="XtionPro_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="L_Wheel_Link">
+    <inertial>
+      <origin
+        xyz="8.7822128806314E-06 0.0175843325216576 4.01615191103488E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0301589044589903" />
+      <inertia
+        ixx="1.0477264259799E-05"
+        ixy="-1.41957116787247E-09"
+        ixz="-5.34801581187301E-12"
+        iyy="1.95673216194963E-05"
+        iyz="-1.4110271810981E-11"
+        izz="1.04767226180504E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/L_Wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.192156862745098 0.203921568627451 0.203921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/L_Wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Wheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0932 -0.073"
+      rpy="-8.14483616971169E-17 5.79506885336787E-17 1.73046914505008E-16" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Wheel_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="R_Wheel_Link">
+    <inertial>
+      <origin
+        xyz="7.55560646877173E-06 -0.0175843325216576 2.90944490236034E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0301589044589903" />
+      <inertia
+        ixx="1.04769865623321E-05"
+        ixy="9.91082156776263E-10"
+        ixz="-2.70786372820667E-10"
+        iyy="1.95673216194963E-05"
+        iyz="1.01643374547431E-09"
+        izz="1.04770003155173E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/R_Wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.192156862745098 0.203921568627451 0.203921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/R_Wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Wheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0932000000000001 -0.0712"
+      rpy="0 0 -1.04508841651281E-16" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Wheel_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="F_Caster_Link">
+    <inertial>
+      <origin
+        xyz="0.00633160699751481 -7.84095011141517E-16 -0.0233754297605657"
+        rpy="0 0 0" />
+      <mass
+        value="0.006458942084145" />
+      <inertia
+        ixx="8.51229871059878E-07"
+        ixy="7.94093388050907E-23"
+        ixz="-1.60292400055274E-07"
+        iyy="8.57353144042699E-07"
+        iyz="1.14035241748862E-22"
+        izz="6.15415248234449E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/F_Caster_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/F_Caster_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="F_Caster_Joint"
+    type="continuous">
+    <origin
+      xyz="0.112017059221718 0 -0.0535"
+      rpy="2.67447454341301E-17 -1.35485287038386E-16 -0.220161696511527" />
+    <parent
+      link="base_link" />
+    <child
+      link="F_Caster_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="F_Wheel_Link">
+    <inertial>
+      <origin
+        xyz="0.0125000000000001 -7.84095011141517E-16 -0.0173079592567194"
+        rpy="0 0 0" />
+      <mass
+        value="0.00621176171108955" />
+      <inertia
+        ixx="3.03577949363663E-07"
+        ixy="-4.63221143029696E-23"
+        ixz="-9.27710660947011E-24"
+        iyy="4.5943322401206E-07"
+        iyz="-3.14282252567846E-24"
+        izz="3.03577949363663E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/F_Wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/F_Wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="F_Wheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.0211920407432806"
+      rpy="6.16297582203915E-33 1.59766411793996E-17 0" />
+    <parent
+      link="F_Caster_Link" />
+    <child
+      link="F_Wheel_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="B_Caster_Link">
+    <inertial>
+      <origin
+        xyz="0.0061772302028385 -0.00138963095536703 -0.0233754297605657"
+        rpy="0 0 0" />
+      <mass
+        value="0.00645894208414501" />
+      <inertia
+        ixx="8.51524825324746E-07"
+        ixy="-1.31113975718363E-09"
+        ixz="-1.56384162076956E-07"
+        iyy="8.57058189777832E-07"
+        iyz="3.51802127192077E-08"
+        izz="6.1541524823445E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/B_Caster_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/B_Caster_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="B_Caster_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.112017059221718 0 -0.0535"
+      rpy="0 0 -1.04508841651281E-16" />
+    <parent
+      link="base_link" />
+    <child
+      link="B_Caster_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="B_Wheel_Link">
+    <inertial>
+      <origin
+        xyz="0.0124999999999999 6.31439345255558E-16 -0.0173079592567194"
+        rpy="0 0 0" />
+      <mass
+        value="0.00621176171108955" />
+      <inertia
+        ixx="3.03577949363664E-07"
+        ixy="1.32348898008484E-23"
+        ixz="5.21243116251773E-24"
+        iyy="4.5943322401206E-07"
+        iyz="-8.52200215345273E-24"
+        izz="3.03577949363663E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/B_Wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m-robot/meshes/B_Wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="B_Wheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.0211920407432806"
+      rpy="0 0 -0.221276561890748" />
+    <parent
+      link="B_Caster_Link" />
+    <child
+      link="B_Wheel_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

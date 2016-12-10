@@ -1,0 +1,43 @@
+This package is modified according to rbx1 package, applicable to mrobot, built map and navigation. Use can refer to rbx1. Supports XtionPro and RPLIDAR lidar.
+
+0、read mrobot_document
+
+建立地图：
+1.启动底盘：
+	roslaunch mrobot_bringup mrobot.launch
+2.启动激光雷达或深度摄像头：
+	深度摄像头XtionPro：roslaunch mrobot_bringup turtlebot_fake_laser_openni2.launch 
+	或RPLIDAR激光雷达： roslaunch rplidar_ros rplidar.launch 
+	注：请将rplidar.launch中的ttyUSB0改为ttyUSB1，并先插入底盘并启动底盘再启动RPLIDAR。
+3.启动gmapping：
+	roslaunch mrobot_nav gmapping_demo.launch
+4.启动rviz：
+	rosrun rviz rviz -d `rospack find mrobot_nav`/gmapping.rviz
+5.启动键盘遥控：
+	roslaunch mrobot_nav keyboard_teleop.launch
+建好地图可以关闭键盘直接点2D Nav Goal导航测试
+	
+保存地图：
+	roscd mrobot_nav/maps
+	rosrun map_server map_saver -f your_map
+
+导航：
+1.启动底盘：
+	roslaunch mrobot_bringup mrobot.launch
+2.启动激光雷达或深度摄像头：
+	深度摄像头XtionPro：roslaunch mrobot_bringup turtlebot_fake_laser_openni2.launch 
+	或RPLIDAR激光雷达： roslaunch rplidar_ros rplidar.launch 
+	注：请将rplidar.launch中的ttyUSB0改为ttyUSB1，并先插入底盘并启动底盘再启动RPLIDAR。
+3.加载地图：
+	roslaunch mrobot_nav tb_demo_amcl.launch map:=your_map.yaml
+4.运行rviz：
+	rosrun rviz rviz -d `rospack find mrobot_nav`/nav_test.rviz
+	
+	注：如果编译出现问题，权限不够，请到mrobot-indigo\mrobot_nav\cfg文件夹下，执行：chmod +777 CalibrateAngular.cfg和chmod +777 CalibrateLinear.cfg
+	
+Web:http://www.rosclub.cn/
+Author：Steven.Zhang
+QQ:377287082
+QQ group:184903125
+E-mail:377287082.qq.com
+Date:2016.12.10

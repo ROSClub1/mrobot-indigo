@@ -1,0 +1,33 @@
+<!--
+  Collection of robot-centric definitions and nodes for the mrobot. 
+ -->
+<launch>
+  <arg name="base"/>
+  <arg name="stacks"/>
+  <arg name="3d_sensor"/>
+
+  
+  <include file="$(find mrobot_bringup)/launch/includes/description.launch.xml">
+    <arg name="base" value="$(arg base)" />
+    <arg name="stacks" value="$(arg stacks)" />
+    <arg name="3d_sensor" value="$(arg 3d_sensor)" />
+  </include>
+
+  <!-- important generally, but specifically utilised by the current app manager -->  
+  <param name="robot/name" value="$(optenv ROBOT mrobot)"/>
+  <param name="robot/type" value="mrobot"/>
+ 
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />  
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher">
+    <param name="publish_frequency" type="double" value="5.0" />
+  </node>
+   <node name="base2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 1 /base_link /laser 50"/>
+<!--    <node pkg="tf" type="static_transform_publisher" name="odom_left_wheel_broadcaster" args="0 0 0 0 0 0 /base_link /Left_wheel 100" />
+   <node pkg="tf" type="static_transform_publisher" name="odom_right_wheel_broadcaster" args="0 0 0 0 0 0 /base_link /Rignt_wheel 100" /> -->
+ 
+   
+  <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" >
+    <rosparam command="load" file="$(find mrobot_bringup)/param/$(arg base)/diagnostics.yaml" />
+  </node>
+</launch>

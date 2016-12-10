@@ -1,0 +1,7 @@
+# base-agnostic default capability providers for the TurtleBot
+defaults:
+  std_capabilities/Diagnostics: 'mrobot_capabilities/diagnostics'
+  std_capabilities/LaserSensor: 'mrobot_capabilities/depthimage_to_laserscan'
+  std_capabilities/RGBDSensor: 'mrobot_capabilities/kinect_rgbd_sensor'
+  std_capabilities/RobotStatePublisher: 'mrobot_capabilities/robot_state_publisher'
+  turtlebot_capabilities/TurtleBotBringup: 'mrobot_capabilities/tb_bringup'
