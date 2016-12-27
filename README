@@ -1,8 +1,10 @@
 This package is modified according to rbx1 package, applicable to mrobot, built map and navigation. Use can refer to rbx1. Supports XtionPro and RPLIDAR lidar.
 
-0、read mrobot_document
+0.read mrobot_document
 
 建立地图：
+0.使用手册
+mrobot_document/Mrobot使用手册
 1.启动底盘：
 	roslaunch mrobot_bringup mrobot.launch
 2.启动激光雷达或深度摄像头：
